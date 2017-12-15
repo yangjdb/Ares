@@ -11,5 +11,9 @@
     "url": "http://penguin.com/yytect/Ares.git"
   },
   "author": "yangjd",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^8.5.1",
+    "koa": "^2.0.0-alpha.8"
+  }
 }
