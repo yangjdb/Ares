@@ -13,6 +13,7 @@
   "author": "yangjd",
   "license": "ISC",
   "dependencies": {
+    "@types/koa": "^2.0.43",
     "@types/node": "^8.5.1",
     "koa": "^2.0.0-alpha.8"
   }
