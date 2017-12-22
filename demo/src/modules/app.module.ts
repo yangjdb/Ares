@@ -1,9 +1,9 @@
-import {Module} from
+import { Module } from '../../../src/decorator/module';
+
+import { CatsModule } from './cat/cat.module';
+import { HomesModule } from './home/home.module'
 
 @Module({
-    modules: [],
-    controllers: [],
-    services: []
+    modules: [HomesModule, CatsModule],
 })
-
-export class ApplicationModule{}
+export class ApplicationModule { }
