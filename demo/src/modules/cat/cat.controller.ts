@@ -1,6 +1,6 @@
 import { Get, Res, Post, Param, Body } from '@nestjs/common';
 
-import { Controller } from '../../../../src/decorator/controller';
+import { Controller } from '../../../../src/decorator/controller.decorator';
 
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cat.service';
