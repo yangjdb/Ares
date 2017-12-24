@@ -1,7 +1,7 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "ares",
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "Ares Demo",
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
