@@ -1,9 +1,18 @@
-import { Module } from '../../../src/decorator/module';
-
-import { CatsModule } from './cat/cat.module';
-import { HomesModule } from './home/home.module'
+import {Module, NestModule, MiddlewaresConsumer} from '@nestjs/common';
+import {LoggerMiddleware} from './common/middlewares/logger.middleware';
+import {CatsModule} from './cats/cats.module';
+import {CatsController} from './cats/cats.controller';
 
 @Module({
-    modules: [HomesModule, CatsModule],
+    modules: [CatsModule],
 })
-export class ApplicationModule { }
+export class ApplicationModule implements NestModule {
+    
+    configure(consumer: MiddlewaresConsumer): void {
+        consumer
+            .apply(LoggerMiddleware)
+            .with('ApplicationModule')
+            .forRoutes(CatsController);
+        // return super.configure(consumer);
+    }
+}
