@@ -1,10 +1,10 @@
-import {Table, Column, Model} from 'sequelize-typescript';
+import {Column, Model, Table} from 'sequelize-typescript';
 
 @Table
 export class Cat extends Model<Cat> {
-    @Column name: string;
+    @Column public name: string;
     
-    @Column age: number;
+    @Column public age: number;
     
-    @Column breed: string;
+    @Column public breed: string;
 }

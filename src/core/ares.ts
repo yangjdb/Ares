@@ -1,8 +1,8 @@
-import * as http from 'http'
-import * as Koa from 'koa'
-import {AresInterface} from '../interface/aresInterface'
-import {Module} from './module'
-import {Container} from './container'
+import * as http from 'http';
+import * as Koa from 'koa';
+import {AresInterface} from '../interface/aresInterface';
+import {Container} from './container';
+import {Module} from './module';
 
 export class Ares implements AresInterface {
     private readonly app = new Koa();
