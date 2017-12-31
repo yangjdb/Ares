@@ -1,27 +1,17 @@
-import {
-    Controller,
-    Get,
-    Post,
-    Body,
-    UseGuards,
-    ReflectMetadata,
-    UseInterceptors,
-    Param,
-} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
-import {Cat} from './cat.entity';
-import { RolesGuard } from '../common/guards/roles.guard';
+import { Cat } from './cat.entity';
 import { Roles } from '../common/decorators/roles.decorator';
-import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
-import { TransformInterceptor } from '../common/interceptors/transform.interceptor';
 import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 
 @Controller('cats')
-@UseGuards(RolesGuard)
-@UseInterceptors(LoggingInterceptor, TransformInterceptor)
+// @UseGuards(RolesGuard)
+// @UseInterceptors(LoggingInterceptor, TransformInterceptor)
 export class CatsController {
-    constructor(private readonly catsService: CatsService) {
+    constructor(
+        private readonly catsService: CatsService
+    ) {
     }
     
     @Post()
@@ -37,9 +27,16 @@ export class CatsController {
     
     @Get(':id')
     findOne(
-        @Param('id', new ParseIntPipe())
-            id,
+        @Param('id', new ParseIntPipe()) id,
     ) {
         // logic
+    }
+    
+    @Get('test')
+    test() {
+        console.log('test');
+        // await this.catsService.test();
+        // res.statusCode(200).send('ok');
+        return 'ok'
     }
 }

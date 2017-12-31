@@ -1,11 +1,10 @@
-import {Module} from '@nestjs/common';
-import {CatsController} from './cats.controller';
-import {CatsService} from './cats.service';
-import {catsProviders} from './cats.providers';
-import {DatabaseModule} from '../database/database.module';
+import { Module } from '@nestjs/common';
+import { CatsController } from './cats.controller';
+import { CatsService } from './cats.service';
+import { catsProviders } from './cats.providers';
 
 @Module({
-    modules: [DatabaseModule],
+    modules: [],
     controllers: [CatsController],
     components: [CatsService, ...catsProviders],
 })

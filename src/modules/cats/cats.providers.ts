@@ -1,4 +1,4 @@
-import {Cat} from './cat.entity';
+import { Cat } from './cat.entity';
 
 export const catsProviders = [
     {
