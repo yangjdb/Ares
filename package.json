@@ -4,7 +4,7 @@
   "description": "Ares Demo",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "tslint -p tsconfig.json & node demo/index.js",
     "start:watch": "nodemon",
     "prestart:prod": "tsc",
     "start:prod": "node dist/server.js"
@@ -15,6 +15,7 @@
     "@nestjs/microservices": "^4.4.0",
     "@nestjs/testing": "^4.4.0",
     "@nestjs/websockets": "^4.4.0",
+    "mysql2": "^1.5.1",
     "redis": "^2.7.1",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.3",
