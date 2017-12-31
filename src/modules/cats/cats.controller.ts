@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { CreateCatDto } from './dto/create-cat.dto';
-import { CatsService } from './cats.service';
+// import { CreateCatDto } from './dto/create-cat.dto';
+// import { CatsService } from './cats.service';
 import { Cat } from './cat.entity';
-import { Roles } from '../common/decorators/roles.decorator';
+// import { Roles } from '../common/decorators/roles.decorator';
 import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 
 @Controller('cats')
@@ -15,7 +15,7 @@ export class CatsController {
     }
     
     @Post()
-    @Roles('admin')
+    // @Roles('admin')
     async create(@Body() createCatDto: CreateCatDto): Promise<Cat> {
         return this.catsService.create(createCatDto);
     }
