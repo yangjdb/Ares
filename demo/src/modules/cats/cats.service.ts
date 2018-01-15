@@ -1,7 +1,7 @@
 import { Component, Inject } from '@nestjs/common';
-import { CreateCatDto } from './dto/create-cat.dto';
+import { CommonService } from '../common/common.service';
 import { Cat } from './cat.entity';
-import { CommonService } from "../common/common.service";
+import { CreateCatDto } from './dto/create-cat.dto';
 
 @Component()
 export class CatsService {
@@ -11,11 +11,11 @@ export class CatsService {
     ) {
     }
     
-    async test() {
+    public async test() {
         console.log('test');
     }
     
-    async create(createCatDto: CreateCatDto): Promise<Cat> {
+    public async create(createCatDto: CreateCatDto): Promise<Cat> {
         const cat = new Cat();
         cat.name = createCatDto.name;
         cat.breed = createCatDto.breed;
@@ -26,7 +26,7 @@ export class CatsService {
         // return await cat.save();
     }
     
-    async findAll(): Promise<Cat[]> {
+    public async findAll(): Promise<Cat[]> {
         return await this.catsRepository.findAll<Cat>();
     }
 }

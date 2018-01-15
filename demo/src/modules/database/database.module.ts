@@ -7,6 +7,6 @@ import { databaseProviders } from './database.providers';
 })
 export class DatabaseModule {
     constructor() {
-        console.log('DatabaseModule')
+        console.log('DatabaseModule');
     }
 }
