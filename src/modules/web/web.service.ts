@@ -1,9 +1,7 @@
 import { Component } from "@nestjs/common";
 
 @Component()
-export class CommonService {
-    constructor(
-    ) {
+export class WebService {
+    constructor() {
     }
-    
 }
